@@ -1,0 +1,9 @@
+import sqlite3
+sqliteConnection = sqlite3.connect('database.db')
+cur = sqliteConnection.cursor()
+ct="create table if not exists database2(user string, pas string)"
+#ct=("CREATE TABLE database(name VARCHAR(255), pas VARCHAR(255))")
+cur.execute(ct)
+print("Table created")
+cur.close()
+sqliteConnection.close()
